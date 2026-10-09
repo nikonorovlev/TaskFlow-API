@@ -1,7 +1,9 @@
 from datetime import date
 from typing import Annotated, Literal
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
+
 from app.db.database import get_db
 from app.schemas.task import Priority, TaskCreate, TaskResponse, TaskStatus, TaskUpdate
 from app.services import task_service

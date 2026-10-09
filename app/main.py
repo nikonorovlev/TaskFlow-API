@@ -1,6 +1,8 @@
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
-from app.api.routes import tasks, stats
+
+from app.api.routes import stats, tasks
 from app.core.config import get_settings
 from app.db.database import create_db_and_tables
 

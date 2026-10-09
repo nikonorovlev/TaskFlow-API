@@ -1,6 +1,8 @@
 from typing import Annotated
+
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+
 from app.db.database import get_db
 from app.schemas.task import TaskStats
 from app.services import task_service

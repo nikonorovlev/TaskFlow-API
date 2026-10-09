@@ -1,12 +1,15 @@
-from datetime import date, datetime, timezone
+from datetime import UTC, date, datetime
+
 from sqlalchemy import Date, DateTime, Enum, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
+
 from app.db.database import Base
 from app.schemas.task import Priority, TaskStatus
 
+
 def utc_now() -> datetime:
     # Store naive UTC consistently because SQLite doesn't preserve tzinfo.
-    return datetime.now(timezone.utc).replace(tzinfo=None)
+    return datetime.now(UTC).replace(tzinfo=None)
 
 class Task(Base):
     __tablename__ = "tasks"

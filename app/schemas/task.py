@@ -1,6 +1,8 @@
 from datetime import date, datetime
 from enum import Enum
+
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+
 
 class TaskStatus(str, Enum):
     todo = "todo"

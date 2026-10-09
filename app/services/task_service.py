@@ -1,8 +1,11 @@
 from datetime import date
+
 from sqlalchemy import case, func, select
 from sqlalchemy.orm import Session
+
 from app.models.task import Task
 from app.schemas.task import Priority, TaskCreate, TaskStatus, TaskUpdate
+
 
 def create_task(db: Session, data: TaskCreate) -> Task:
     task = Task(**data.model_dump())
